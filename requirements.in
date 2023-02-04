@@ -2,3 +2,4 @@ click
 paho-mqtt
 pydantic
 numpy
+black

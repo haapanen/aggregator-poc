@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from data_generator import DataGenerator, ModelType
+from publisher.data_generator import DataGenerator, ModelType
 
 
 class DeviceComponent(BaseModel):
