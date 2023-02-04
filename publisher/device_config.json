@@ -1,0 +1,23 @@
+{
+  "name": "Device",
+  "components": [
+    {
+      "name": "Component",
+      "properties": [
+        "positionX",
+        "positionY",
+        "positionZ",
+        "rotationX",
+        "rotationY",
+        "rotationZ",
+        "scaleX",
+        "scaleY",
+        "scaleZ",
+        "colorR",
+        "colorG",
+        "colorB",
+        "colorA"
+      ]
+    }
+  ]
+}
