@@ -1,4 +1,5 @@
 import datetime
+import json
 import time
 import click
 import logging
@@ -59,6 +60,8 @@ def run_aggregator(host: str, port: int, topic: str):
 
         for aggregate in generator:
             database.store_aggregate(aggregate_timestamp, aggregate[1])
+
+            mqtt_client.publish("aggregates", json.dumps(aggregate[1]))
 
         logger.info(f"Aggregation complete")
 
