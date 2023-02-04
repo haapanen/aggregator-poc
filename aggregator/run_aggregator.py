@@ -61,6 +61,8 @@ def run_aggregator(host: str, port: int, topic: str):
         for aggregate in generator:
             database.store_aggregate(aggregate_timestamp, aggregate[1])
 
+            aggregate[1]["timestamp"] = aggregate_timestamp.isoformat()
+
             mqtt_client.publish("aggregates", json.dumps(aggregate[1]))
 
         logger.info(f"Aggregation complete")

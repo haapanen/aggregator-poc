@@ -1,4 +1,5 @@
 import datetime
+import time
 import click
 import logging
 from core.message import Sample
@@ -52,6 +53,8 @@ def run_publisher(host: str, port: int, topic: str, device_config: str):
                 )
 
                 count += 1
+
+        time.sleep(0.1)
 
         if current_time - previous_publish_time > datetime.timedelta(seconds=1):
             logger.info(f"Published {count} messages")
